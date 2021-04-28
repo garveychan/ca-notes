@@ -473,14 +473,14 @@ Standard design pattern:
 3. Take dog for walk.
 4. Print dog daily journal.
 
-![Dog Procedural](./assets/ruby/dog-procedural.png)
+![Dog Procedural](./assets/ruby/dog_procedural.png)
 
 ##### Object Oriented Design
 
 Centered around what the Dog object can do instead.
 
-![Dog OOP](./assets/ruby/dog-oop.png)
-![Dog OOP](./assets/ruby/dog-oop-code.png)
+![Dog OOP](./assets/ruby/dog_oop.png)
+![Dog OOP](./assets/ruby/dog_oop_code.png)
 
 ### Classes
 
@@ -615,8 +615,8 @@ There are two main types of objects used for inheritance:
 
 Note that a class can only inherit directly from one another class. Child classes can inherit from all classes above it in the hierarchy.
 
-![Class Hierarchy](./assets/ruby/class-hierarchy-example.png)
-![Class Extension](./assets/ruby/class-extension.png)
+![Class Hierarchy](./assets/ruby/class_hierarchy_example.png)
+![Class Extension](./assets/ruby/class_extension.png)
 
 Inheritance lets similar class types share common attributes:
 - Reduces code duplication (DRY)
@@ -642,7 +642,7 @@ The `super` method allows a class to execute a method with the same name in an a
 
 This is useful, particularly for the `initialize` method if the subclass needs to be initialized in the same way as a parent class.
 
-![super method](./assets/ruby/super-method.png)
+![super method](./assets/ruby/super_method.png)
 
 `super()` can be used to specify that no arguments are to be passed up to the superclass method.
 
@@ -650,8 +650,8 @@ This is useful, particularly for the `initialize` method if the subclass needs t
 
 Polymorphism refers to the ability for the same method to return different results depending on the object it's called on due to inheritance rules.
 
-![Polymorphism example](./assets/ruby/polymorphism-example.png)
-![Polymorphism example 2](./assets/ruby/polymorphism-example-2.png)
+![Polymorphism example](./assets/ruby/polymorphism_example.png)
+![Polymorphism example 2](./assets/ruby/polymorphism_example_2.png)
 
 ##### Mixins
 
@@ -661,7 +661,7 @@ This is achieved using the `include` keyword within the class to bring the modul
 
 Mixins follow the same **naming convention** as classes - **PascalCase**.
 
-![Mixin example](./assets/ruby/mixin-example.png)
+![Mixin example](./assets/ruby/mixin_example.png)
 
 ### Error handling
 
@@ -711,7 +711,7 @@ end
 - `raise`
 **raise** allows the user to explicitly *raise* a **RuntimeError**, through which the user can specify an exception type.
 
-![Error Raising](./assets/ruby/raising-errors.png)
+![Error Raising](./assets/ruby/raising_errors.png)
 
 As seen above, you can raise custom errors by utilising control statements, only raising the error if the specified issue has occurred.
 
@@ -746,7 +746,7 @@ end
 - `else`/`ensure`
 The **else** keyword will capture control flow after **raise** error has been evaluated and hasn't return any issues, continuing to execute any further instructions. **ensure** will execute the following code block no matter what happens in the block.
 
-![Else/Ensure](./assets/ruby/else-ensure.png)
+![Else/Ensure](./assets/ruby/else_ensure.png)
 
 ### Testing with Rspec
 

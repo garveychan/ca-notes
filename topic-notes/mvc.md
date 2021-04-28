@@ -7,7 +7,7 @@ https://www.educative.io/blog/mvc-tutorial
 
 Model View Controller is a design pattern used in application development with a number of different languages. The structure is broken down into three main parts, each part serving a specific function - providing **modularity**. Frameworks like **Rails** can take advantage of this convention to automate many aspects of building, running and updating the application.
 
-![MVC Model](./assets/mvc/mvc-model.png)
+![MVC Model](./assets/mvc/mvc_model.png)
 
 ### Model
 
