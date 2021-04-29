@@ -145,9 +145,9 @@ Form submission - creating a user
 3. Client is redirected
 
 **Interview - attention to detail - HTML**
-apostrophes should use the correct character
-labels should use `for` attribute so that the focus shifts to the right element on page when clicked
-this is for accessibility reasons
+Apostrophes should use the correct character code.
+Labels should use `for` attribute so that the focus shifts to the right element on page when clicked.
+This is for accessibility reasons.
 e.g. `<label for="recipe_user_id">User<label>`
 
 Dependent associations allows the app to delete related elements from the database.

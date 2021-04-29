@@ -4,7 +4,7 @@
 
 <hr>
 
-These are assorted notes written from my time in the Coder Academy Fast Track Bootcamp (February 2021 Intake).
+These are assorted notes written for the Coder Academy Fast Track Bootcamp (February 2021 Intake).
 
 Note - Lecture notes transitioned from Excel format to Markdown format in Term 2 for VIM and Markdown practice.
 
