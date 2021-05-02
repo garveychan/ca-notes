@@ -85,3 +85,11 @@ Hexadecimal 0xFE == 1111 1110
 0b1110 => 14 Base 10 => 0xE
 
 Binary sets of 4 add up to 15 so they can capture the full set of hexadecimal numbers/letters.
+
+##### Rails Models
+
+Model file name convention - lowercase singular - recipe.rb
+
+To seed your application after seed file has been created - run db:seed
+
+<% %> does not print to browser - requires `=` sign - <%= %>
