@@ -1,12 +1,12 @@
-#Markdown Cheatsheet
+# Markdown Cheatsheet
 
-###Resources
+### Resources
 https://dillinger.io/ - Online Markdown Editor
 https://www.markdowntutorial.com/ - Markdown Tutorial
 https://www.markdownguide.org/cheat-sheet/ - Basic Cheatsheet
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet - Another Cheatsheet
 
-###Basic Syntax
+### Basic Syntax
 
 These are the elements outlined in John Gruber’s original design document. All Markdown applications support th
 se elements.
@@ -24,7 +24,7 @@ se elements.
 |Link|`[title](https://www.example.com)`|
 |Image|`![alt text](image.jpg)`|
 
-###Extended Syntax
+### Extended Syntax
 These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
 
 |Element|Markdown Syntax|
