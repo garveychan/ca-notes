@@ -243,7 +243,7 @@ Consider how you will query and use the data, and use normalisation to make it e
 
 - Tip: Data structures could be modelled around the **user stories** to more effectively solve problems.
 
-### Database Commands
+### Commands
 
 #### Manipulative features 
 
@@ -291,3 +291,107 @@ Example:
 
 UPDATE items
 SET price = 4.50 WHERE name = ‘frog’;
+
+### Relationships
+
+Relationships refer to the associations between entities (tables). These define how records in one table relate to records in another.
+
+**Example**
+- Items
+  - Name
+  - Description
+  - Price
+- Customers
+  - Name
+  - Email
+  - Address
+- Orders
+  - Date
+  - Customer
+  - Items with quantities
+  - Total price
+
+How is a customer associated with an order?
+- A customer places an order
+
+How is an item associated with an order?
+- An order contains at least one item
+
+##### Cardinality and Ordinality
+
+Cardinality refers to the **maximum** number of one entity with which an entity relates:
+
+- An order is made by one customer (one)
+- An order can contain many items (many)
+
+Ordinality refers to the **minimum** number of one entity with which an entity relates:
+
+- A customer can have 0 orders (**optional** relation)
+- An order contains at least one item (**manadatory** relation)
+
+##### One to One
+
+A **one to one** relationship refers to an association where records in one entity only relate to one record in another entity.
+
+Example
+- A customer only **has one** address and one address **belongs to** only one customer.
+
+##### One to Many
+
+A **one to many** relationship exists when one record **has many** associations with other records.
+
+Example
+- An order has exactly one customer.
+- A customer has 0 or more orders.
+
+It is **mandatory** for an order to have a customer and **optional** for a customer to have an order.
+
+##### Many to Many
+
+A **many to many** relationship exists when a record **has many** associations with another record and vice versa.
+
+Example
+- An order can have many items.
+- An item can belong to many orders.
+
+##### Relationship Symbols
+
+![Relationship Symbols](./assets/databases/relationship_symbols.png)
+
+#### Entity Relationship Diagrams
+
+Entity Relationship Diagrams (or **ERDs**) help visualise the relationships between entities in a database.
+
+There are typically three types of ERDs, representing different levels of abstraction:
+
+- **Conceptual**
+- **Logical**
+- **Physical**
+
+##### Resources
+
+Licensed ERD Tools
+- Smartdraw.com
+- Lucidchart.com
+
+Free ERD Tools
+- Diagrams.net
+
+##### Physical ERDs
+
+A physical ERD represents how data is **physically** modeled in the database. It can include:
+
+- Attribute types
+- Keys and constraints
+- Relationships
+
+Physical ERDs represent **schemas** for database tables and can be used to directly inform how tables should be created.
+
+##### ERD Process
+
+ERDs generally form part of the design process of an application - occurring before implementation.
+
+Some or all optimisation (including normalisation) of the data model may be done before physical ERDs are created.
+
+Sometimes, an ERD is created from a database - such as when designing over an existing code base or existing database.
+
