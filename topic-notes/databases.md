@@ -317,17 +317,17 @@ How is a customer associated with an order?
 How is an item associated with an order?
 - An order contains at least one item
 
-##### Cardinality and Ordinality
-
-Cardinality refers to the **maximum** number of one entity with which an entity relates:
-
-- An order is made by one customer (one)
-- An order can contain many items (many)
+#### Cardinality and Ordinality
 
 Ordinality refers to the **minimum** number of one entity with which an entity relates:
 
 - A customer can have 0 orders (**optional** relation)
 - An order contains at least one item (**manadatory** relation)
+
+Cardinality refers to the **maximum** number of one entity with which an entity relates:
+
+- An order is made by one customer (one)
+- An order can contain many items (many)
 
 ##### One to One
 
@@ -357,6 +357,8 @@ Example
 ##### Relationship Symbols
 
 ![Relationship Symbols](./assets/databases/relationship_symbols.png)
+
+- Tip: The symbol **closest** to the entity refers to the **cardinality** of the entity i.e. the **maximum** associations it can have with the source of the relationship. The symbol **furthest** from the entity refers to the **ordinality** of the entity i.e. the **minimum** associations it can have with the source of the relationship.
 
 #### Entity Relationship Diagrams
 
