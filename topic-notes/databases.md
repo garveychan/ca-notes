@@ -395,3 +395,12 @@ Some or all optimisation (including normalisation) of the data model may be done
 
 Sometimes, an ERD is created from a database - such as when designing over an existing code base or existing database.
 
+##### Sample ERD
+
+![Example ERD](./assets/databases/erd_example.jpeg)
+
+- Tip: PK = Primary Key, FK = Foreign Key, PF = Primary/Foreign Key in a Join Table.
+
+##### Join Table
+
+A **join table** is a table which joins records in multiple entities. These can be used to remove **transitive dependencies** in tables to satisfy the **third normal form**, helping to mitigate against modification anomalies.
