@@ -358,7 +358,10 @@ Example
 
 ![Relationship Symbols](./assets/databases/relationship_symbols.png)
 
-- Tip: The symbol **closest** to the entity refers to the **cardinality** of the entity i.e. the **maximum** associations it can have with the source of the relationship. The symbol **furthest** from the entity refers to the **ordinality** of the entity i.e. the **minimum** associations it can have with the source of the relationship.
+![One vs Only One](./assets/databases/one_vs_only_one.png)
+
+- A LoginID should only ever belong to one student.
+- A DormRoom only belongs to one student at a time but might be assigned to another student later on.
 
 #### Entity Relationship Diagrams
 
