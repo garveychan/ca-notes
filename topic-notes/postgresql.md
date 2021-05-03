@@ -25,7 +25,7 @@ https://www.postgresqltutorial.com/psql-commands/
 |:-:|:-:|:-:|:-:|
 |psql (in terminal)|--help <br> -l <br> -d 'database' <br> -U 'user' <br> -h 'host' <br> -W | show help <br> list databases <br> connect to database <br> connect to user <br> force password prompt|psql -d recipes_development -U garveychan -W|
 |\l|none|list all available databases|\l|
-|\c|'database_name'|connect to another database|\c recipes_development|
+|\c <br> \connect|'database_name'|connect to another database|\c recipes_development|
 |\d|'table_name'|describe a table|\d recipes|
 |\dt|none|list all available tables|\dt|
 |\dn|none|list all schemas|\dn|
@@ -54,6 +54,7 @@ create table if not exists categories(
   id serial primary key,
   name varchar(100) not null,
   description varchar(1000)
+  min_price numeric not null
 );
 ```
 
@@ -61,7 +62,8 @@ This creates a table called **categories** if it doesn't already exist.
 Its attributes/columns are **id, name, and description**.
 The attribute **id** is a **serial** which is an intger that **auto-increments** with each new **record**.
 The attributes **name** and **varchar** are **varchars** or **strings** with character lengths of **100 and 1000** respectively.
-**ID** is the primary key for this table and **name** can't be **null**.
+**ID** is the primary key for this table and **name** / **min_price** can't be **null**.
+**Min_price** is a **numeric** value.
 
 ##### Column Properties
 
@@ -117,13 +119,36 @@ https://www.postgresqltutorial.com/postgresql-select/
 - [WHERE](https://www.postgresqltutorial.com/postgresql-where/) clause - filter returned rows
 - [FETCH](https://www.postgresqltutorial.com/postgresql-fetch/) / [LIMIT](https://www.postgresqltutorial.com/postgresql-limit/) - select a subset of rows from a table
 
+Examples
+```
+-- Put your select statements below each problem below.
+
+-- 1. Select all items
+select * from items;
+
+-- 2. Select the category id for 'toys'
+select id from categories where name = 'toys';
+
+-- 3. Select all names of items for the 'toys' category
+select name from items where category_id = 1;
+
+-- 4. Select the items with prices greater than $10.00 
+select * from items where price > 10;
+
+-- 5. Select the category id for 'crafts'
+select id from categories where name = 'crafts';
+
+-- 6. Select the names and prices for all items in the toys and crafts categories
+select name, price from items where category_id = 1 or category_id = 2;
+```
+
 ##### Inserting Records
 
 `INSERT INTO table_name (COLUMNS) VALUES;`
 - specify column names in **any order** and match order of values
 - will return an error if values are missing for primary keys or not null constraints
 
-Example
+Examples
 ```
 insert into categories (name, description)
 values
@@ -132,4 +157,22 @@ values
   ('clothes', 'Beautiful things to wear'),
   ('electronics', 'Gadgets for living');
 ```
-
+```
+insert into products(name, description, category, price)
+	values
+		(
+			'Pokemon stickers',
+			'Random collection of cool Pokemon stickers',
+			null,
+			19.99
+		),
+		(
+			'Mighty Mouse',
+			'The coolest mouse you''ll ever own.',
+			'Accessories',
+			29.89
+		);
+```
+- Tips 
+  - Notice that **null** has been used in the first entry to skip the category. This will throw an error if that attribute has a **null constraint**.
+  - Notice that the single quote in the second record in `you''ll` has been **escaped** using another single quote.
