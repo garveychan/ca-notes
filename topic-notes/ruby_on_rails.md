@@ -502,7 +502,7 @@ rails g model <model name (singular)> <column_name:data_type{size}|{size,precisi
 Example
 
 ``` Terminal
-rails g model User name:string{30} age:integer
+rails g model User name:string{30} age:integer group:references
 ```
 
 ##### Rails Files
@@ -510,7 +510,7 @@ rails g model User name:string{30} age:integer
 - The `generate` command will create the necessary files for the Model, including <model_name>.rb and the **migration** file - which tells the database management system what commands to run to create the necessary tables.
 - Once the model is generated, `rails db:migrate` must be run to create the schema in the database as specified by the migration file.
 
-#### Rails CRUD
+#### CRUD
 
 ##### Command Cheatsheet
 
@@ -594,6 +594,163 @@ User.destroy_all
 - `.destroy_all` will destroy all records.
 
 - **Note** - these commands will automatically **DELETE** records from the **database** i.e. no `.save` required.
+
+#### Associations
+
+https://guides.rubyonrails.org/association_basics.html
+
+Rails allows for associations to be declared between models/tables quickly using specific methods, depending on the required relationship.
+
+![has_one_through](./assets/ruby-on-rails/has_one_through.png)
+
+##### Has One Relationship
+
+`belongs_to`
+
+This method is called in a Model to specify that each record **belongs to** a record in another model and it has a **foreign key** to link them.
+
+`has_one`
+
+This method specifies that each record of a model **has one** associated record in another model.
+
+Note that naming has to be singular for both.
+
+##### Has Many Relationship
+
+`belongs_to`
+
+Similar to the **has one relationship**, this specifies that each record in this model **belongs to** a record in another model and contains the **foreign key**. Naming is singular.
+
+`has_many`
+
+This specifies that a record in this model **has many** associations with records of another model.
+
+Naming is **plural**.
+
+##### Has Many Through Relationship
+
+This relationship uses a **join table** to link two tables together - allowing for **many to many** relationships.
+
+![has_many_through](./assets/ruby-on-rails/has_many_through.png)
+
+- Tip - Just like with Ruby, the `=>` symbol syntax can be shortened to `through: :appointments`.
+
+##### Polymorphic Relationships
+
+Polymorphic associations allow for different records to **belong to** different tables.
+
+Example:
+
+- **Comments** could belong to both **Users** and **Recipes**.
+- **Reviews** could belong to both **Books** and **Authors**.
+
+In order to achieve this, the polymorphic model would have two attributes referencing the models it can be associated with.
+
+- **Users** and **Recipes** would be **commentable**. **Comments** would have an attribute of **commentable_type**, identifying the table it is referencing (**User** or **Recipe**) and a **commentable_id**, identifying the **id** of the **commentable type (user or recipe)**.
+
+![polymorphic](./assets/ruby-on-rails/polymorphic.png)
+
+Example Polymorphic Generation Command
+``` Ruby
+rails g model Review reviewable:references{polymorphic} comment:string
+```
+### Migrations
+
+https://guides.rubyonrails.org/active_record_migrations.html
+
+"Migrations are a convenient way to alter your database schema over time in a consistent way. They use a Ruby Domain-Specific Language (DSL) so that you don't have to write SQL by hand, allowing your schema and changes to be database independent.
+
+You can think of each migration as being a **new 'version' of the database**. A schema starts off with nothing in it, and each migration modifies it to add or remove tables, columns, or entries. Active Record knows how to update your schema along this timeline, bringing it from whatever point it is in the history to the latest version. Active Record will also update your db/schema.rb file to match the up-to-date structure of your database."
+
+#### Rails Migrations
+
+When a model is generated, Rails sets up a **migration file** which dictates how it will interact with the **SQL database** in order to build the **schema** as desired.
+
+Example:
+``` Ruby
+class CreateProducts < ActiveRecord::Migration[6.0]
+  def change
+    create_table :products do |t|
+      t.string :name
+      t.text :description
+
+      t.timestamps
+    end
+  end
+end
+```
+
+In order to effect this migration, the user must run `rails db:migrate`.
+
+`db:migrate` comes with several options for other migration functionality, such as `db:migrate:status` to see the status of migrations and more.
+
+`db:migrate:rollback` can revert the changes applied to the database.
+
+**schema.rb** is an auto-generated file representing the current state of the database. It should match the versions of the migrations files and **shouldn't be modified directly**.
+
+- Tip - It can be faster and more reliable to run `rails db:schema:load` to define the database schema rather than running all the migrations especially if some of them are older and have **external dependencies**.
+
+#### Generating Migrations
+
+Migrations can be generated with rails commands to adjust the existing database schema.
+
+Example
+``` Terminal
+rails g migration AddPriceToBooks price:integer
+rails db:migrate
+```
+
+In the example above, we have used the **rails generate** command to generate a migration **AddPriceToBooks** to add the **Price attribute** with **data type - price**. We then run `rails db:migrate` to update the schema.
+
+Note - Rails **infers** from the **migration name** what changes we want to make to the schema so it is **important** to get this right.
+
+- "If the migration name is of the form "**AddColumnToTable**" or "**RemoveColumnFromTable**" and is followed by a list of column names and types then a migration containing the appropriate **add_column** and **remove_column** statements will be created."
+
+``` Ruby
+class AddPartNumberToProducts < ActiveRecord::Migration[6.0]
+  def change
+    add_column :products, :part_number, :string
+  end
+end
+```
+
+##### Change Methods
+
+https://guides.rubyonrails.org/active_record_migrations.html#using-the-change-method
+
+- add_column
+- add_foreign_key
+- add_index
+- add_reference
+- add_timestamps
+- change_column_default (must supply a :from and :to option)
+- change_column_null
+- create_join_table
+- create_table
+- disable_extension
+- drop_join_table
+- drop_table (must supply a block)
+- enable_extension
+- remove_column (must supply a type)
+- remove_foreign_key (must supply a second table)
+- remove_index
+- remove_reference
+- remove_timestamps
+- rename_column
+- rename_index
+- rename_table
+
+### Model Methods
+
+##### Validations
+
+Validations help ensure that only **valid** data is saved to the **database** - e.g. checking that a valid **email address** has been submitted.
+
+These types of validations are said to occur at the **application/model level**.
+
+
+
+##### Reusable Queries
 
 <hr>
 

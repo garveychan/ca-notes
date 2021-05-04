@@ -24,12 +24,3 @@ It is responsible for displaying content from the **model** to the user, and all
 ### Controller
 
 The **controller** is the brain or **orchestrator**. The **view** interacts with the **controller** to get content from the **model** to display and to update the content based on the user interaction.
-
-### Directory Structure
-
-- root
-    - controllers
-    - models
-    - views
-    - application.rb
-

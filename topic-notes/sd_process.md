@@ -263,7 +263,7 @@ Two-sided marketplace for buying and selling videogames.
 - Can be flexible based on team style and requirements
 - Will be different for scrum vs kanban
 
-![Trello Process](./assets/sd-process/trello-process.png)
+![Trello Process](./assets/sd-process/trello_process.png)
 
 #### Retrospective
 

@@ -1,13 +1,13 @@
-#Git Notes 
+# Git Notes 
 
 ###Resources
 https://git-scm.com/
 https://www.atlassian.com/git/tutorials
 
-###Handy Notes
+### Handy Notes
 .gitignore - File in git repo which we can use to specify files to ignore - namely .DS_Store which is the MacOS directory preferences file.
 
-###Git Workflow (Local)
+### Git Workflow (Local)
 *git init* - Initialize Git project.
 
 1. Working Directory
@@ -27,7 +27,7 @@ https://www.atlassian.com/git/tutorials
 3. Repository
     - Changes are saved to repository as a commit
 
-#####Commands
+##### Commands
 |Command|Options|Description|
 |:-:|:-:|:-:|
 |git init|none|Initializes git repo i.e. turns your working directory into a git repo|
@@ -38,11 +38,11 @@ https://www.atlassian.com/git/tutorials
 |git status|none|Show current git status - current branch, modified, deleted and  untracked files.|
 |git log|none<br>--oneline<br>--graph<br>--all|Shows detailed log of git commits.<br>Shows details in one line each.<br>Graphs branches.<br>Shows commits in the history of branches, tags, and other refs. Doesn't show commits that are not reachable from any ref.|
 
-###Git Backtracking
+### Git Backtracking
 
 https://dev.to/neshaz/when-to-use-git-reset-git-revert--git-checkout-18je
 
-#####Workflow
+##### Workflow
 
 Before resetting:
 - HEAD = most recent commit in branch
@@ -57,16 +57,16 @@ After resetting:
 |git revert [commit] [file]|none|Good for *committed* changes - Rolls back changes you have committed and creates a new commit based on the specified commit. May overwrite files in working directory.|
 |git reset [commit]/[SHA] [file]|none|Good for *uncommitted* changes - Rewinds the entire working tree back to the specified commit. Does not make changes to your files. It merely unstages any changes.|
 
-###Git Branching/Forking
+### Git Branching/Forking
 
-#####Resources
+##### Resources
 
 https://learngitbranching.js.org/
 
 #*Distinguish between branching/forking here.*
 https://support.atlassian.com/bitbucket-cloud/docs/branch-or-fork-your-repository/
 
-#####Workflow
+##### Workflow
 
 *git branch* - Create new (giver) branch.
 
@@ -96,7 +96,7 @@ branched version of line
 
 *git branch -D* - Delete specified branch, -D option required if branch was never merged.
 
-#####Helpful Commands
+##### Helpful Commands
 |Command|Options|Description|
 |:-:|:-:|:-:|
 |git branch|none|Shows which branch you're currently on.|
@@ -105,14 +105,14 @@ branched version of line
 |git merge [branch]|none|Bring changes from specified branch (giver) into main branch (receiver)|
 |git rebase [branch]|none|Rebase your current branch to the specified branch i.e. it now points to the specified branch's last commit as a parent rather than where the branch initially diverged - Changes will be encapsulated within the staging process.|
 
-###Git Remote
+### Git Remote
 
 Teamwork is facilitated through the use of *remotes*. A remote is a shared Git repo that allows for collaborators to work on the same Git project from multiple locations.
 
-#####Resources
+##### Resources
 https://dev.to/wceolin/mistakes-i-made-in-code-reviews-and-what-i-do-now-kk6
 
-#####Workflow
+##### Workflow
 
 1. *git clone* - Clone the remote repo to your local working directory.
 
@@ -126,7 +126,7 @@ https://dev.to/wceolin/mistakes-i-made-in-code-reviews-and-what-i-do-now-kk6
 
 6. *git push* - Push your branch up to the remote for review.
 
-#####Commands
+##### Commands
 |Command|Options|Description|
 |:-:|:-:|:-:|
 |git remote|none<br>-v<br>add<br>rm|Show remote repos associated with current directory.<br>Show remote repos associated with current directory in detail.<br>Add a remote repo.<br>Remove a remote repo.|

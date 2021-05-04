@@ -1,14 +1,14 @@
-#Terminal Cheatsheet
+# Terminal Cheatsheet
 
-####Interface
+#### Interface
 - Command Line Interface = Z Shell
 - % = Default Shell Prompt
 
-####Scripting
+#### Scripting
 - Shell Scripts can be written with .sh file extensions.
 - Z shell are declared by starting the file with #!/bin/zsh followed by the contents.
 
-####Environment Functions
+#### Environment Functions
 - Environment = Settings and preferences of the user.
 - You can set greetings, aliases, variables, etc.
 - These are saved at ~/.zshrc.
@@ -23,7 +23,7 @@
 |export [variable]="[string]"|Set string for environment variable e.g. USER|
 |ln -s [path][newpath]|Link Function - This helps set a shorter file path for the path specified.|
 
-####Shortcuts
+#### Shortcuts
 |Key/Command|Description|
 |:-:|:-:|
 | Tab | Auto-complete files and folder names |
@@ -40,9 +40,9 @@
 | Ctrl + D | Exit the current shell |
 |Up/Down Arrow|Scroll through previous commands|
 
-####Commands
+#### Commands
 
-#####Handy Notes
+##### Handy Notes
 - Standard Command Format = Command -[Options] [Arguments]
 - Options can be consolidated (i.e. ls -alt refers to -a & -l & -t).
 - Options are case-sensitive.
@@ -74,7 +74,7 @@
 |sudo [command]|none|Run command with the security privileges of the superuser (Super User DO)|
 |exit|none|Quit|
 
-####Syntax
+#### Syntax
 |Item|Description|
 |:-:|:-:|
 |~|Home Directory|
@@ -88,14 +88,14 @@
 |\\|'Escape' following character and print as it is|
 |""|Encapsulate characters as string - useful for strings with spaces etc.|
 
-####Useful Brew Functions
+#### Useful Brew Functions
 These are handy functions installed via Homebrew, a helpful package manager (brew.sh).
 |Command|Options|Description|
 |:-:|:-:|:-:|
 |tree [dir]|none<br>-L #|Draw tree of all subfolders and files<br>Set level to which tree executes|
 |code [file]|none<br>|Opens file in Visual Studio Code|
 
-####Scripting
+#### Scripting
 
 ##### zmv function
 `autoload zmv`

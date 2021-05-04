@@ -1,9 +1,9 @@
-#HTML Notes
+# HTML Notes
 
-###Resources
+### Resources
 http://getbem.com/naming/ - Naming Best Practice
 
-###Background
+### Background
 - HTML stands for *HyperText Markup Language*.
 - It is a declarative language i.e. static.
 - It is a *markup* language which is a computer language that defines the structure and presentation of raw text.
@@ -12,7 +12,7 @@ http://getbem.com/naming/ - Naming Best Practice
 - HTML can then be layered with Cascading Style Sheets (CSS) and JavaScript to create visually compelling and dynamic websites.
 - The current standard is **HTML5**.
 
-###Anatomy
+### Anatomy
 - HTML is composed of ***elements***.
 - For example, you have a **paragraph element**,  which is made up of: 
     - An **opening** tag -  `<p>`.
@@ -22,7 +22,7 @@ http://getbem.com/naming/ - Naming Best Practice
 ``` HTML
 <p>Hello World!</p>
 ```
-###Element Structure
+### Element Structure
 - HTML is organised as a collection of family tree relationships.
 - When an element is inside another element, it is considered the **child** of that element.
 - The **child** is said to be **nested** inside the **parent** element.
@@ -49,7 +49,7 @@ http://getbem.com/naming/ - Naming Best Practice
 - In the above example, the paragraph and heading elements are **siblings**.
 - They are also **grandchildren** of the body element.
 
-###Headings
+### Headings
 - There are six different headings, or heading elements.
 - `<h1>` through to `<h6>`, from largest to smallest.
 - `<h1>` is generally used for main headings and the rest are subheadings.
@@ -59,7 +59,7 @@ http://getbem.com/naming/ - Naming Best Practice
 <h3>Subheading 3</h3>
 ```
 
-###Divisions
+### Divisions
 - Generally shortened to **div**, this element represents a **container** that divides the page into sections.
 - These are useful for grouping your HTML elements together.
 - On their own, they don't have specific visual representations, but they prove useful when custom styles are added to our other elements.
@@ -75,7 +75,7 @@ http://getbem.com/naming/ - Naming Best Practice
 </body>
 ```
 
-###Attributes
+### Attributes
 - Attributes can be added to elements, expanding their **opening tags**.
 - They can **provide information**, **change styling**, and other things.
 - They are made up of two components - **name** and **value**.
@@ -87,7 +87,7 @@ http://getbem.com/naming/ - Naming Best Practice
   <h1>Introduction</h1>
 </div>
 ```
-###Paragraph/Span
+### Paragraph/Span
 - Displaying text in HTML can be achieved with either a **paragraph** `<p>` or a **span** `<span>`.
 - **Paragraph** - Used to divide your content into ***blocks***.
 - **Span** - Used to target a specific piece of text ***inline***.
@@ -103,7 +103,7 @@ http://getbem.com/naming/ - Naming Best Practice
 
 - In the above example, `<span>Self-driving cars</span>` is separated out from the rest of the paragraph.
 
-###Styling
+### Styling
 
 - HTML tags can be used to style text.
 - Common ones include `<em>` for <em>italics</em> emphasis and `<strong>` for <strong>bold</strong>.
@@ -113,7 +113,7 @@ http://getbem.com/naming/ - Naming Best Practice
 - This should be used because your browser will not interpret whitespace as spaces. In fact, they may even be collapsed.
 - `<hr>` is an unclosed tag / semantic element which can be used to display a horizontal line between paragraph-level elements.
 
-###Lists
+### Lists
 - There are two types of lists - **Ordered** and **Unordered**.
     - Unordered Lists:
         - You can use `<ul>` and `<li>` tags to identify unordered lists.
@@ -135,7 +135,7 @@ http://getbem.com/naming/ - Naming Best Practice
             </ul>
         ```
 
-###Images
+### Images
 - The `<img>` tag allows you to add an image to a webpage.
 - This tag is a **self-closing** tag.
 ``` HTML
@@ -146,7 +146,7 @@ http://getbem.com/naming/ - Naming Best Practice
 - The `<img>` tag has a **required attribute** - `src`.
 - `src` represents the **source** of the image, either a **local address** or a **URL** (Uniform Resource Locator).
 
-#####Image Text
+##### Image Text
 ``` HTML
 <img src="#" alt="A field of yellow sunflowers" />
 ```
@@ -157,7 +157,7 @@ http://getbem.com/naming/ - Naming Best Practice
     - Visually impaired users can hear the description with a *screen reader*.
     - Search Engine Optimisation can *read* the description.
 
-###Audio and Video
+### Audio and Video
 - Similar to the **image** tag, the **audio** and **video** elements can be used to embed audio and video in the webpage.
 - These elements require both an **opening** and **closing** tag.
 
@@ -182,9 +182,9 @@ http://getbem.com/naming/ - Naming Best Practice
 - The text 'Video not supported' will be displayed if the video cannot be loaded.
 - Note that the **source** can be embedded in the **video** element as well.
 
-###Document Structure
+### Document Structure
 
-#####Declaration
+##### Declaration
 - HTML files must be declared for use in web browsers with a **document type declaration** at the start of each file. Files should also end with the *.html extension.
 ``` HTML
 <!DOCTYPE html>
@@ -196,7 +196,7 @@ http://getbem.com/naming/ - Naming Best Practice
 </html>
 ```
 
-#####Head
+##### Head
 - The HTML element usually begins with the **Head element** `<head>` which contains your webpage's **metadata**. This data is not displayed on your webpage and is typically used for **Search Engine Optimisation** among other reasons.
 
 ``` HTML
@@ -207,7 +207,7 @@ http://getbem.com/naming/ - Naming Best Practice
 </html>
 ```
 
-#####Title
+##### Title
 - Within the Head element, you will usually find a **Title Element** `<title>` which specifies the title of the browser tab.
 
 ``` HTML
@@ -219,7 +219,7 @@ http://getbem.com/naming/ - Naming Best Practice
   </head>
 </html>    
 ```
-###Links
+### Links
 
 - HTML gives you the ability to **link** to other webpages using the **anchor element** `<a>`, otherwise known as a **hyperlink**. You must use the **href attribute** to specify where you wish to link your anchor.
 
@@ -227,21 +227,21 @@ http://getbem.com/naming/ - Naming Best Practice
 <a href="https://www.google.com">This is a link to Google</a>
 ```
 
-#####New Tab
+##### New Tab
 - Adding a **target attribute** to the **anchor element** with a value of **"_blank"** allows you to specify that the link opens in a **new tab**.
 
 ``` HTML
 <a href="https://www.google.com" target="_blank">This link to Google will open in a new tab"</a>
 ```
 
-#####Relative Links
+##### Relative Links
 - You can also use the **href attribute** for **relative links**. These are links to files within the same folder. ```./``` tells the browser to look within the current folder.
 
 ``` HTML
 <a href="./contact.html">Contact</a>
 ```
 
-#####Wrapped Link
+##### Wrapped Link
 - With HTML, you can turn almost any element into a link by **wrapping** it with an **anchor element**.
 
 ``` HTML
@@ -259,7 +259,7 @@ http://getbem.com/naming/ - Naming Best Practice
 ```
 - If setting a text link, make sure to wrap the **content** of the element rather than the element itself.
 
-#####Same Page Link
+##### Same Page Link
 - You can also link to a section of the page but setting an **id** and pointing to it with an **anchor tag**.
 
 ``` HTML
@@ -268,9 +268,9 @@ http://getbem.com/naming/ - Naming Best Practice
 <a href="#top">Link to top paragraph</a>
 ```
 
-###Document Standards
+### Document Standards
 
-#####Indentation
+##### Indentation
 
 - The World Wide Web Consortium (W3C) is responsible for maintaining style standards of HTML. W3C recommends 2 spaces / 1 tab of indentation when writing HTML code.
 
@@ -285,7 +285,7 @@ http://getbem.com/naming/ - Naming Best Practice
 </body>
 ```
 
-#####Comments
+##### Comments
 
 - Comments begin with ```<!---``` and end with ```--->```.
 - You can turn any line into a comment with **command + /**.
@@ -294,7 +294,7 @@ http://getbem.com/naming/ - Naming Best Practice
 <!--- this is a comment --->
 ```
 
-###Tables
+### Tables
 
 - Tables can be used to display data.
 
@@ -417,7 +417,7 @@ Note - in a real HTML table, the duplicate cells are merged.
 </table>
 ```
 
-#####Styling
+##### Styling
 
 - Tables and their elements can be styled in CSS.
 
@@ -429,9 +429,9 @@ table, th, td {
 }
 ```
 
-###Forms
+### Forms
 
-#####Form Element
+##### Form Element
 - Form elements can be used to collect information within the browser for processing.
 - The **action attribute** determines where the information is sent.
 - The **method attribute** is assigned a HTTP verb to be included in the HTTP request.
@@ -451,7 +451,7 @@ table, th, td {
 ```
 
 
-#####Input Element
+##### Input Element
 - The ```<input>``` element allows a user to input information.
 - It does not require a **closing tag**.
 <br>
@@ -510,7 +510,7 @@ There are several **type attributes** which determine the type of input field ge
 ```
 - Remember that when the form is submitted, it is the **value** which is sent, not the text.
 
-#####Data Lists
+##### Data Lists
 - With **datalists**, you can adapt your input box to auto-populate based on pre-filled data.
 - The user can choose to accept one of the options or use their own input.
 - This is done with the `<datalist>` and `<option>` elements.
@@ -574,7 +574,7 @@ There are several **type attributes** which determine the type of input field ge
   - Server-side validation - The information is sent to another machine (usually a server) to check if it is valid.
   - Client-side validation - The information is verified in the browser (the client) before it is sent anywhere. An advantage of this is that malicious inputs can be identified before they are sent to the server.
 
-#####Required
+##### Required
 - An input can be specified as **required** before any form submission can occur.
 - This is done with the `required` attribute in an input element.
 
@@ -582,11 +582,11 @@ There are several **type attributes** which determine the type of input field ge
 <input type="text" name="food" id="food" required>
 ```
 
-#####Min/Max
+##### Min/Max
 - Min and Max attributes can be used to set limit validations on the input.
 - See the **Range** type input element for more details.
 
-#####Text Length
+##### Text Length
 - Text length can be limited using the `<minlength>` and `<maxlength>` attributes.
 
 ``` HTML
@@ -603,7 +603,7 @@ There are several **type attributes** which determine the type of input field ge
 <input id="payment" name="payment" type="text" required pattern="[0-9]{14,16}">
 ```
 
-###Semantic HTML
+### Semantic HTML
 
 - Semantic HTML allows identify what specific elements within the code actually does.
 - It is used for the following reasons:
@@ -621,7 +621,7 @@ There are several **type attributes** which determine the type of input field ge
   - `<figure>` & `<figcaption>` - used to encapsulate an image/illustration/etc. with a caption. **Figcaption** will usually go within the figure.
   - `<footer>` - footer. 
 
-#####Semantic Code
+##### Semantic Code
 ``` HTML
 <header>
   <h1>
@@ -630,7 +630,7 @@ There are several **type attributes** which determine the type of input field ge
 </header>
 ```
 
-#####Non-Semantic Code
+##### Non-Semantic Code
 ``` HTML
 <div id="header">
   <h1>

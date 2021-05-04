@@ -126,7 +126,7 @@ Then, the code is written until the test *passes*.
 
 #### Red Green Refactor Cycle
 
-![Red Green Refactor Cycle](./assets/testing/red-green-refactor-cycle.png)
+![Red Green Refactor Cycle](./assets/testing/red_green_refactor_cycle.png)
 
 1. Red - Write tests that fail. Start by writing a test for the code you will write. Call the function in your test with various input and confirm the expected output. Remember to test edge cases.
 2. Green - Make the tests pass. Write just enough code to make the tests pass.

@@ -6,7 +6,7 @@
 
 ##### Ruby
 
-`%` - Modulus operator - Gives remainder
+`%` - Modulus operator - returns remainder
 `**` - Exponent operator
 
 ``` Ruby
@@ -26,14 +26,14 @@ directory = {:name => "Jim", :age => 25} #same as above
 directory[:age] = 25 #must initialise with :symbol syntax
 ```
 
-Methods are defined in `snake-case`.
+Methods are defined in `snake_case`.
 
 `self.class` is a class method.
 `@variable` is an instance variable.
 
 Classes are the blueprints of objects, not the other way around.
 
-Short circuit logic: 3 < 4 || 4 < 1 returns true
+Short circuit logic: 3 < 4 || 4 < 1 returns true.
 
 
 Ruby interprets from left to right, there can't be spaces in if/else blocks:
@@ -72,11 +72,10 @@ Recipe - Model
 Hexadecimal (Base 16)
 Numbers only go from 0-15
 
-Decimal
-0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-
-Hexadecimal
-0 1 2 3 4 5 6 7 8 9 A  B  C  D  E  F
+|Decimal|0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Base 11|0|1|2|3|4|5|6|7|8|9|A|10|11|12|13|14|15|16|17|
+|Hexadecimal|0|1|2|3|4|5|6|7|8|9|A|B|C|D|E|F|10|11|12|
 
 Hexadecimal and Binary can be quickly converted with a hack:
 
@@ -101,5 +100,5 @@ To seed your application after seed file has been created - run db:seed
 `context` / `describe` - encapsulates multiple tests
 
 describe ###
- it ###
-  expect ###
+-- it ###
+---- expect ###
