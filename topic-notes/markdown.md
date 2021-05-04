@@ -1,9 +1,13 @@
 # Markdown Cheatsheet
 
 ### Resources
+
 https://dillinger.io/ - Online Markdown Editor
+
 https://www.markdowntutorial.com/ - Markdown Tutorial
+
 https://www.markdownguide.org/cheat-sheet/ - Basic Cheatsheet
+
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet - Another Cheatsheet
 
 ### Basic Syntax
@@ -25,6 +29,7 @@ se elements.
 |Image|`![alt text](image.jpg)`|
 
 ### Extended Syntax
+
 These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
 
 |Element|Markdown Syntax|

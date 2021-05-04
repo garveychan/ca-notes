@@ -1,13 +1,17 @@
 # Git Notes 
 
-###Resources
+### Resources
+
 https://git-scm.com/
+
 https://www.atlassian.com/git/tutorials
 
 ### Handy Notes
-.gitignore - File in git repo which we can use to specify files to ignore - namely .DS_Store which is the MacOS directory preferences file.
+
+`.gitignore` - File in git repo which we can use to specify files to ignore - namely .DS_Store which is the MacOS directory preferences file.
 
 ### Git Workflow (Local)
+
 *git init* - Initialize Git project.
 
 1. Working Directory
@@ -28,6 +32,7 @@ https://www.atlassian.com/git/tutorials
     - Changes are saved to repository as a commit
 
 ##### Commands
+
 |Command|Options|Description|
 |:-:|:-:|:-:|
 |git init|none|Initializes git repo i.e. turns your working directory into a git repo|
@@ -64,6 +69,7 @@ After resetting:
 https://learngitbranching.js.org/
 
 #*Distinguish between branching/forking here.*
+
 https://support.atlassian.com/bitbucket-cloud/docs/branch-or-fork-your-repository/
 
 ##### Workflow
@@ -97,6 +103,7 @@ branched version of line
 *git branch -D* - Delete specified branch, -D option required if branch was never merged.
 
 ##### Helpful Commands
+
 |Command|Options|Description|
 |:-:|:-:|:-:|
 |git branch|none|Shows which branch you're currently on.|
@@ -110,6 +117,7 @@ branched version of line
 Teamwork is facilitated through the use of *remotes*. A remote is a shared Git repo that allows for collaborators to work on the same Git project from multiple locations.
 
 ##### Resources
+
 https://dev.to/wceolin/mistakes-i-made-in-code-reviews-and-what-i-do-now-kk6
 
 ##### Workflow
@@ -127,6 +135,7 @@ https://dev.to/wceolin/mistakes-i-made-in-code-reviews-and-what-i-do-now-kk6
 6. *git push* - Push your branch up to the remote for review.
 
 ##### Commands
+
 |Command|Options|Description|
 |:-:|:-:|:-:|
 |git remote|none<br>-v<br>add<br>rm|Show remote repos associated with current directory.<br>Show remote repos associated with current directory in detail.<br>Add a remote repo.<br>Remove a remote repo.|
