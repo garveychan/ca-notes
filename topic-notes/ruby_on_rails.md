@@ -744,13 +744,44 @@ https://guides.rubyonrails.org/active_record_migrations.html#using-the-change-me
 
 ##### Validations
 
+https://guides.rubyonrails.org/active_record_validations.html
+
 Validations help ensure that only **valid** data is saved to the **database** - e.g. checking that a valid **email address** has been submitted.
 
-These types of validations are said to occur at the **application/model level**.
+These types of validations are said to occur at the **application/model level**. Performing these validations on the **front-end** is useful because it can prevent **unnecessary** requests to the server.
 
+Example -
+``` Ruby
+class Book < ApplicationRecord
+  validates :title, presence: true
+  validates :description, length: { minimum: 10, too_short: "Please enter at least %{count} characters!" }
+end
+```
 
+``` Terminal
+book = Book.create(name: "Harry Potter", description: "You're a wizard, Harry!").valid?
+=> true
+book = Book.create(name: "Hunger Games", description: "Yum").valid?
+=> false
+book.errors.full_messages
+=> ["Please enter at least 10 characters!"]
+```
 
-##### Reusable Queries
+- Tip - `.errors.full_messages` will provide an array of the **error messages** in full - helpful for **debugging**.
+
+- Tip - There are certain methods which [skip validations](https://guides.rubyonrails.org/active_record_validations.html#skipping-validations) and should be used with caution.
+
+##### Scopes
+
+Scopes are a way to specify **commonly-used queries** which can be called as **methods** in **models**.
+
+``` Ruby
+class Book < ApplicationRecord
+  scope :bargain, -> { where (price: 0..500) }
+end
+```
+
+The above example creates a method called `bargain` which can be called on a **Book object** which will **return** all records **where** price is between 0 and 500.
 
 <hr>
 
