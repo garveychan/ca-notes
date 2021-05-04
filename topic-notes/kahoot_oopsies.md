@@ -93,3 +93,13 @@ Model file name convention - lowercase singular - recipe.rb
 To seed your application after seed file has been created - run db:seed
 
 <% %> does not print to browser - requires `=` sign - <%= %>
+
+#### Rspec
+
+`it` is the method that sets individual tests - not `describe`
+`expect` lets you create assertions
+`context` / `describe` - encapsulates multiple tests
+
+describe ###
+ it ###
+  expect ###

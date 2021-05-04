@@ -65,6 +65,61 @@ Join Table - Rails Naming Convention - **alphabetical order** and **plural** - `
 
 ## Tuesday 04/04/21
 
+##### Rails
+
+rule of thumb - .build instantiates / .create instantiates and saves to database.
+
+self-referential association - needed for assignment - can come up in interviews.
+
+polymorphic associations - allow for models to belong to multiple models in a **single** association.
+
+Rails can only do **GET** or **POST**.
+This is a deliberate design limitation.
+It creates and interprets a **hidden** input type with a **value** of 'patch' rather than a method in order to provide the correct response.
+
+Rails is declarative programming.
+
+**Permitted** parameters only required if **bulk updating** to database.
+
+`.where` vs `.find_by` - `.find_by` method only returns the first record - it instructs psql to **LIMIT** the request.
+
+`render` vs `redirect_to`
+- Render tells Rails which view or asset to show a user, without losing access to any variables defined in the controller action.
+- Redirect_to tells the browser to request a new URL.
+
+##### Authentication / Authorisation
+
+Authentication - Authenticates the user, makes sure that they are who they say they are.
+Authorisation - Once authenticated, what is the user allowed to do.
+
+devise - authentication solution
+
+HTTP is a **stateless** protocol 
+- each request is completely independent.
+- the server receives a request and delivers a response - then closes the connection.
+
+HTTP as a stateless protocol, allowed the internet to **SCALE**.
+
+```
+HTTP stands for HyperText Transfer Protocol, the protocol used to deliver all resources on the World Wide Web. HTTP defines how the messages are formatted and transmitted.
+
+When a client requests some information (say, clicks on a hyperlink), the browser sends a request message to the HTTP server for the requested objects. The server receives the requests and sends the response message with the objects. However, the HTTP server maintains no information about the clients, and if the client asks for the same object again, the server resends the object. Therefore, HTTP is called a stateless protocol.
+
+HTTP can use both nonpersistent connections and persistent connections. A nonpersistent connection is the one that is closed after the server sends the requested object to the client. In other words, the connection is used exactly for one request and one response.
+
+With persistent connections, the server leaves the TCP connection open after sending responses and hence the subsequent requests and responses between the same client and server can be sent. The server closes the connection only when it is not used for a certain configurable amount of time. With persistent connections, the performance is improved by 20%.
+ 
+Nonpersistent connections are the default mode for HTTP/1.0 and persistent connections are the default mode for HTTP/1.1.
+```
+
+Cookies are used to store small amounts of information to maintain a session.
+
+These can be seen using Chrome Developer Tools under 'Application > Storage > Cookies'.
+
+Cookies can have an expiration date, if none is set they expire in 30 years.
+
+~/new URL indicates RESTful
+
 <hr>
 
 ## Wednesday 05/04/21
