@@ -36,7 +36,7 @@ https://www.postgresqltutorial.com/psql-commands/
 |\g|none|rerun the previous command|\g|
 |\s|none <br> 'file_name'|show command history <br> save command history to file|\s command_history.txt|
 |\i|'file_name'|execute commands from file|\i ~/sql/create_table.sql|
-|\?|none|show general help|\?|
+|\\?|none|show general help|\\?|
 |\h|none|show available commands/help|\h|
 |\q|none|exit|\q|
 
