@@ -470,6 +470,133 @@ a {
 
 <hr>
 
+### Models Walkthrough
+
+#### Background
+
+- Models represent the data in a Rails application.
+- They allow the application to access the database using **Ruby methods**.
+- **ActiveRecord** interprets Ruby commands and translates them to **SQL** in order to interact with the databases in the desired way.
+
+- Models represent:
+  - Models and their data
+  - Associations between these models
+
+- Rails helps validate models before they are **persisted** to the database.
+- They allow for database operations to be performed in object-oriented fashion.
+
+#### Generating a Model
+
+``` Shell
+rails g model <model name (singular)> <column_name:data_type{size}|{size,precision}>
+```
+
+**Sytnax**
+- Models are generated with the rails `generate` command (`g` for short).
+- Model names must be in **PascalCase** or **snake_case**.
+- Model names must be **singular**.
+- Multiple attributes/columns can be added if separated by a **space**.
+- **Size** and **Precision** are optional.
+- Default type is a **string**.
+
+Example
+
+``` Terminal
+rails g model User name:string{30} age:integer
+```
+
+##### Rails Files
+
+- The `generate` command will create the necessary files for the Model, including <model_name>.rb and the **migration** file - which tells the database management system what commands to run to create the necessary tables.
+- Once the model is generated, `rails db:migrate` must be run to create the schema in the database as specified by the migration file.
+
+#### Rails CRUD
+
+##### Command Cheatsheet
+
+`.all` => show all records.
+`.find(#)` => find by index/id.
+`.find_by(#)` => return the **first instance** satisfying the condition.
+`.where(#)` => return **all instances** satisfying the condition.
+
+`.<attribute_name>` => read or write a record to the attribute of the object.
+
+`.save` => push changes made in Ruby/Rails to the database.
+`.create()` => `.new` + `.save`
+`.update()` => `.<attribute_name>` + `.save`
+
+`.destroy` => destroy the record in the **DATABASE**.
+`.destroy_by()` => destroy the record specified by the condition in the **DATABASE**
+`.destroy_all` => destroy all records in the **DATABASE**.
+
+##### Create
+
+``` Ruby
+user = User.create(name: 'Eddie', age: 31)
+
+user = User.new
+user.name = 'Eddie'
+user.age = 31
+user.save
+```
+
+- The above code has the same functionality.
+- `create` will call both `new` and `save`.
+- `new` will instantiate an object **without** saving.
+- The object can be created from a hash.
+- Methods named after columns will be added by Rails e.g. `.name` and `.age` - allowing the user to view/update the associated record.
+- `save` will save the record to the database.
+
+##### Read
+
+``` Ruby
+users = User.all
+
+user = User.first
+second = User.find(2)
+eddie = User.find_by(name: 'Eddie')
+smiths = User.where(last_name: 'Smith')
+```
+
+- `.all` will return every record in the table in an array-like collection.
+- `.first` will load the first entry, similarly `.last` will load the last entry.
+- `.find(#)` will find by the **id** specified.
+- `.find_by(#)` will find by the attribute/column specified - returning the **first instance** where this is true.
+- `.where(#)` will return a **collection** based on the condition specified.
+
+##### Update
+
+``` Ruby
+user = User.find_by(name: 'Eddie')
+user.name = 'Ed'
+user.save
+
+user = User.find_by(name: 'Eddie')
+user.update(name: 'Ed')
+```
+
+- Rails will set an `attr_writer` for each attribute/column, allowing for their values to be **written** to.
+- `.save` needs to be called to push any changes made in Ruby/Rails to the database.
+- `.update` will automatically call `.save` and can also use a **hash** to update **multiple values**.
+
+##### Delete
+
+``` Ruby
+user = User.find_by(name: 'Eddie')
+user.destroy
+
+User.destroy_by(name: 'Eddie')
+User.destroy_all
+```
+
+- `.destroy` will destroy the record.
+- `.destroy_by()` will destroy the record specified by the condition.
+- `.destroy_all` will destroy all records.
+
+- **Note** - these commands will automatically **DELETE** records from the **database** i.e. no `.save` required.
+
+<hr>
+
 ### Commands
 
 https://guides.rubyonrails.org/command_line.html
