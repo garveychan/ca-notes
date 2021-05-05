@@ -53,6 +53,13 @@ This paradigm requires a greater learning curve as the developer becomes more fa
 
 ![Rails MVC](./assets/ruby-on-rails/rails_mvc.png)
 
+
+#### Response Request Cycle
+
+![Rails Request Response](./assets/ruby-on-rails/rails_app_request_response.jpeg)
+
+![Rails Request Response Code](./assets/ruby-on-rails/rails_request_response_code.png)
+
 #### Directory Structure
 
 ![File Structure](./assets/ruby-on-rails/rails_files.png)
