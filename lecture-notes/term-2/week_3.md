@@ -123,3 +123,61 @@ Cookies can have an expiration date, if none is set they expire in 30 years.
 <hr>
 
 ## Wednesday 05/04/21
+
+##### Authentication
+
+ORM - Object Relational Mapping
+
+Active Model Guide - Secure Password
+
+ActiveRecord < ActiveModel - all methods available to ActiveRecord
+
+has_secure_password - bcrypt gem - obfuscates password before persisting to database so it can't be read directly
+
+haveibeenpwned.com - check if email address has been compromised by any breaches
+
+`ilike` - can be used for case insensitive search - `user = User.where("last_name ilike ?", params[:last_name])`
+
+``` Ruby
+# Good
+user = User.where(last_name: params[:last_name])
+user = User.where("last_name ilike ?", params[:last_name])
+
+# Bad
+user = User.where("last_name ?", "#{params[:last_name]}")
+```
+
+String Interpolation for authentication is **extremely dangerous**.
+Forms will become susceptible to code **injection**.
+In the above example, someone could construct a *last_name* to perform SQL commands to interact with the database.
+
+**Devise** can be hooked into enterprise authentication solutions such as **Okta**.
+
+- Tip - Don't implement too many technologies (gems) in applications without understanding their inner workings - this can introduce bugs and other issues (potentially unknown until prod).
+
+##### Database Alterations
+
+Restoring a rails app to previous state doesn't change associated database.
+
+```
+alter table users drop column password_digest;
+delete from schema_migrations where version = '#######';
+```
+
+- SQL tip - concat strings with `||`
+```
+update users set email = first_name || '.' || last_name || '@example.com'
+```
+
+Public vs Private vs Protected Methods
+https://medium.com/predict/public-vs-private-vs-protected-ba1869cc8240
+
+Protected methods can be accessed by the **same class**.
+
+Self-referential Associations
+https://guides.rubyonrails.org/association_basics.html#self-joins
+
+##### . files
+
+There are popular `dot` files which help configure machines to be more productive for power-users.
+https://github.com/skwp/dotfiles
