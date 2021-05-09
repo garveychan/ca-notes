@@ -2,7 +2,18 @@
 
 ### Resources
 
+##### Top 10 Mistakes in Rails
+
+https://www.toptal.com/ruby-on-rails/top-10-mistakes-that-rails-programmers-make
+
+##### State of Rails in 2021
+
+https://scoutapm.com/blog/state-of-ruby
+
+##### Guides
+
 https://www.codecademy.com/learn/learn-rails/
+
 https://guides.rubyonrails.org/
 
 https://medium.com/the-renaissance-developer/ruby-on-rails-http-mvc-and-routes-f02215a46a84
@@ -25,7 +36,6 @@ Rails helps people build quick flexible **Minimum Viable Products** (MVPs) for m
 
 Rails follows the coding best practice principle of **Don't Repeat Yourself* (DRY), minimising the amount of repeated code which users will have in their programs.
 
-
 #### Boilerplate Code
 
 Boilerplate code is a unit of code that can be reused in many places with little to no alteration.
@@ -39,7 +49,7 @@ Convention over Configuration is a design paradigm in programming which forms th
 
 In practice, the developer adapts to the **convention** of the framework as much as possible, only explicitly specifying when they must deviate from the convention, i.e. **configure** the framework.
 
-e.g. a Class called **Sales** would, by convention, have a corresponding table in the database called **sales**. It is only if one deviates from this convention, such as the table **product sales**, that one needs to write code regarding these names.
+e.g. a Class called **Sales** would, by convention, have a corresponding table in the database called **sales**. It is only if one deviates from this convention, such as the table **product sales**, that one needs to write further code to refer to these names.
 
 This paradigm requires a greater learning curve as the developer becomes more familiar with the convention. it may also conflict with other programming design principles such as Zen of Python's **explicit over implicit**.
 

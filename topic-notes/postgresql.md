@@ -6,6 +6,8 @@ https://www.postgresqltutorial.com/
 
 https://www.postgresql.org/docs/current/tutorial.html
 
+https://www.enterprisedb.com/postgres-tutorials/postgresql-replication-and-automatic-failover-tutorial
+
 ### Background
 
 - Open Source Relational Database Management System (RDBMS).
