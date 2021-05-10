@@ -4,6 +4,8 @@
 
 https://dev-tester.com/a-real-world-example-of-an-automated-test-pipeline/
 
+https://martinfowler.com/articles/practical-test-pyramid.html
+
 ### Software Testing
 
 Testing is crucial to software development of any kind. Adequate test coverage is the responsibility of developers, even when there is a dedicated Quality Assurance team.

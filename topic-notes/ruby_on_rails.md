@@ -10,6 +10,10 @@ https://www.toptal.com/ruby-on-rails/top-10-mistakes-that-rails-programmers-make
 
 https://scoutapm.com/blog/state-of-ruby
 
+##### Sensitive Data Handling
+
+https://ankane.org/sensitive-data-rails
+
 ##### Guides
 
 https://www.codecademy.com/learn/learn-rails/
