@@ -23,7 +23,7 @@ Examples
 4. Image Uploading app
 5. Blog app
 
-https://flavioscopes.com/sample-app-ideas
+https://flavoscopes.com/sample-app-ideas
 
 1. Start 10am Monday
 2. Finish 3pm Wednesday
@@ -68,4 +68,60 @@ example workflow
 8. this code is now on the main branch
 9. local machine - git checkout main (switch back to main branch); git pull origin main (fetch latest changes)
 10. repeat
+
+## Tuesday 11/04/21
+
+### Image Upload via Amazon
+
+Active Storage Guide - 'Amazon S3 Service'
+
+configre via /config/storage.yml
+
+Rails stores files within the app under /storage
+
+configure config/environments/development.rb - select the desired storage mechanism
+
+upper limit to files in a directory - ~4 billion
+
+rails creates folders and subfolders to store all the images
+
+##### Amazon S3
+
+Amazon S3 buckets allow us to store objects
+
+Buckets must have unique names across AWS
+
+We should select a server geographically similar to the hosting service - in this case North America for Heroku
+
+'Block all public access' is a 'nuclear option' to ensure that everything is completely secured immediately
+
+##### Rails
+
+When the Amazon S3 bucket is set up, we take those settings and put them in our /config/storage.yml file
+
+**The access and secret access keys must be kept secured at ALL times**
+
+##### AWS Security
+
+Identity Access Management (IAM) lets us manage who can access our storage service
+
+We can add the application as a user and enable 'programmatic access' - producing an access and secret access key for us to use
+
+The keys should NOT be stored in plain text in the Rails application
+
+Github scrapers will take these keys and use AWS on our behalf, racking up enormous charges 
+
+Instead, we should use **rails credentials** to encrypt and retrieve our keys
+
+**We must ensure that /config/master.key has been ignored by .gitignore**
+
+### Git Flow
+
+https://git-scm.com/ - good resource for git knowledge
+
+github network graph visualises changes
+
+
+
+
 
