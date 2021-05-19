@@ -117,3 +117,8 @@ Authorisation apps let us use declarative language to define authorisation logic
 Pundit is compatible with Devise - using `current_user` as convention.
 
 Rolify - Sets roles which can be enforced with Pundit.
+
+### VIM
+
+'ex' commands begin with `:`.
+These allow the user to issue commands to VIM.
