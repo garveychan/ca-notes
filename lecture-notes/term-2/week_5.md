@@ -54,3 +54,66 @@ Make sure to set the correct AWS permissions so users have only the authorisatio
 Cloudinary - cloud-based image video management service.
 
 vimtutor - terminal practice.
+
+## Wednesday 19/04/21
+
+### Stripe Payments
+
+Stripe creates a session id on their servers which the Rails app can use to request specific responses related to that session.
+This is unrelated to any session that Rails has created.
+
+HTML header used for delivering form payload
+`'Content-Type': 'application/x-www-form-urlencoded'`
+
+### Miscellaneous
+
+GET requests should always be idempotent i.e. they don't change anything on the server.
+
+Form Helpers - Understanding Parameter Naming Conventions - Rails Guide
+
+e.g. Similarly named parameters should be sent in an array - RESTful URL.
+
+`body: id[]=666&id[]=777`
+
+### Protecting the RESTful endpoints
+
+Rough example of protecting the action in the controller.
+This needs to form the basis of authorisation - hiding the button on the view is auxiliary.
+
+```
+def edit
+	if current_user==recipe.user
+		raise "Unauthorised"
+	end
+end
+```
+
+Preferred method of raising unauthorised errors
+
+```
+resuce_from RuntimeError, with: 'unauthorised'
+
+def unauthorised
+	flash[:alert] = "You're not allowed!"
+	redirect_to recipes_path
+end
+```
+
+Flash is a Rails mechanism for **persisting** information between two requests. 
+Common flash names include:
+- `notice` - used for important notices (suggested green).
+- `alert` - used for information alerts (suggested yellow). 
+- `error` - used to highlight issues (suggested red). 
+Note that these names are inconsequential. They merely specify the name of the hash passed from one request to another.
+However, it's best practice to make them semantic in the interest of code readability.
+
+Controller Actions can only use `render` **once**.
+They construct a response based on the logic in the method and either render the similarly named view by default or the render request specified.
+
+### Pundit, Rolify
+
+Authorisation apps let us use declarative language to define authorisation logic in the application.
+
+Pundit is compatible with Devise - using `current_user` as convention.
+
+Rolify - Sets roles which can be enforced with Pundit.
