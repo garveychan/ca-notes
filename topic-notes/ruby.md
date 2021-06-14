@@ -14,11 +14,9 @@ https://pine.fm/LearnToProgram/chap_00.html
 https://www.codecademy.com/learn/learn-ruby
 https://try.ruby-lang.org/
 
-### Background
+### Read/Eval/Print/Loop
 
-An object-oriented scripting language.
-
-### Interactive Ruby Shell 
+**Interactive Ruby Shell**
 
 **irb** in terminal to open.
 **exit** to close.
@@ -590,7 +588,7 @@ Actions => speak, walk, eat, sleep
     Class names are in **PascalCase**.
     Method names are in **snake_case**.
     
-### Four Pillars
+### Four Pillars of Object Oriented Programming
 
 #### Encapsulation (Changeability)
 
