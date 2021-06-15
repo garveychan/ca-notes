@@ -77,6 +77,6 @@ https://www.codewars.com/kata/search/javascript
 
 
 ### Dash Notes
-
+****
 |Method|Syntax|Example|Notes|Explanation|Link|
 |:-:|:-:|:-:|:-:|:-:|:-:|
