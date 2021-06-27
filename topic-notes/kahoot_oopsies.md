@@ -102,3 +102,19 @@ To seed your application after seed file has been created - run db:seed
 describe ###
 -- it ###
 ---- expect ###
+
+<hr>
+
+#### Term 3
+
+##### JavaScript/React
+
+React requires `index.js` in its build.
+
+`let a = "false" && "null"`
+
+`a` is set to `"null"` because `"false"` is truthy.
+
+
+
+
