@@ -115,6 +115,13 @@ React requires `index.js` in its build.
 
 `a` is set to `"null"` because `"false"` is truthy.
 
+React Component Lifecycle (Mounting) - 
+```
+constructor() -> static getDerivedStateFromProps() -> render() -> componentDidMount()
+```
 
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+Calling `setState` will cause component to re-render.
 
 

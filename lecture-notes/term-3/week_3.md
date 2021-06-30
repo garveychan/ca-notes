@@ -116,3 +116,16 @@ A match object contains information about how a <Route path> matched the URL. ma
     url - (string) The matched portion of the URL. Useful for building nested <Link>s
 ```
 
+## Wednesday 30/06/21
+
+### Git - Rewriting History
+
+https://www.atlassian.com/git/tutorials/rewriting-history
+
+```
+git commit --amend
+
+git rebase -i <SHA>
+```
+
+https://www.atlassian.com/git/tutorials/undoing-changes/git-reset
