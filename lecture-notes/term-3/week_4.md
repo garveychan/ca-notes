@@ -71,5 +71,58 @@ Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allo
 In rails app > initializers > cors.rb - uncomment code and adjust as required
 generated with `--api` at rails app initialisation
 
+## Tuesday 06/07/21
+
+### Misc
+
+Line continuation in Ruby - `\`
+
+```
+devise \
+	:database_authenticatable,
+	:jwt_authenticatable,
+	:registerable
+```
+
+### Devise
+
+https://medium.com/ruby-daily/a-devise-jwt-tutorial-for-authenticating-users-in-ruby-on-rails-ca214898318e
+
+https://github.com/waiting-for-dev/devise-jwt
+
+## Wednesday 07/07/21
+
+##### Misc
+
+https://jwt.io/introduction
+
+JWTs - self describing
+There is no mechanism for a jwt to describe if it has expired prematurely (signout).
+We need to explicitly tell the server that the jwt is no longer valid even if it has yet to timeout.
+
+Route order is important - React will try to match route from top to bottom - unless exact path is specified.
+
+JavaScript objects - 
+
+We can assign a property name dynamically using square brackets -
+
+```JavaScript
+const propName = 'exp';
+
+let obj = { [propName]: 'EXP' }
+
+obj // => { exp: 'EXP' }
+```
+
+Netlify must redirect for React Router in single page application -
+https://docs.netlify.com/routing/redirects/
+React automatically points us to index.html but Netlify requires explicit instructions.
+
+In React ./public -> add file _redirects
+```
+/* /index.html 200
+```
+
+GraphQL, TypeScript, SQL - helpful for future
 
 
