@@ -64,17 +64,6 @@ https://www.codewars.com/kata/search/javascript
 - With `.js` script files in the browser, there is no 'main' method - the script file is executed from top to bottom.
 - There is also no prior compilation - The browser compiles and executes the code on the fly - just-in-time (JIT) compilation.
 
-### Basic Methods
-
-
-
-
-
-
-
-
-
-
 ### Dash Notes
 ****
 |Method|Syntax|Example|Notes|Explanation|Link|
