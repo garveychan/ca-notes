@@ -30,8 +30,6 @@ https://www.codewars.com/kata/search/javascript
 `.exit` to close.
 `Ctrl+L` to clear terminal.
 
-### Background
-
 #### What is JavaScript (JS)?
 
 - Dynamically-typed
