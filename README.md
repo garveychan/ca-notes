@@ -9,4 +9,4 @@ Lecture notes transitioned from Excel format to Markdown format in Term 2 for VI
 
 <hr>
 
-Disclaimer: These notes may not be comprehensive or entirely accurate. Feedback welcomed!
+All intellectual property within this repository is owned by Coder Academy.
