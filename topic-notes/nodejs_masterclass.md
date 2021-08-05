@@ -274,3 +274,106 @@ module.exports = router;
 
 ## MongoDB
 
+### Resources
+
+##### Documentation
+
+https://docs.mongodb.com/manual/
+
+##### Guides
+
+https://docs.mongodb.com/manual/crud
+
+### Background
+
+- Free open-source cross-platform document-oriented database.
+- NoSQL - Doesn't use SQL, not a relational database - no tables and joins.
+- MongoDB engine lets us write JS to perform CRUD operations with JSON.
+- Facilitates rapid early development, but it can be mismanaged if not properly understood.
+
+### Characteristics
+
+- Document Model - Collections of 'items'.
+- Collections are the non-relational equivalents of Tables.
+
+### Command Line Interface
+
+`mongod` - Daemon to run the database service.
+`mongosh` - MongoDB REPL.
+
+**Hint**
+
+`control+z` to suspend service and return to shell.
+`fg` to resume job.
+
+**Useful commands (examples)**
+
+- `help`
+- `show dbs`
+- `use recipes`
+- `show collections`
+- `db.createCollection('recipes')`
+- `db.help()`
+- `db.recipes.find({ ... })`
+- `db.collection.insertOne/insertMany({ ... })`
+
+### Installation
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+Recommended to install via homebrew by following the instructions in the link above.
+
+##### Drivers
+
+https://docs.mongodb.com/drivers/node/
+
+Allows Node.js applications to connect to MongoDB and work with data.
+
+## Mongoose
+
+### Resources
+
+##### Documentation
+
+https://mongoosejs.com/
+
+##### Guides
+
+https://mongoosejs.com/docs/guide.html
+https://mongoosejs.com/docs/models.html
+https://mongoosejs.com/docs/queries.html
+https://mongoosejs.com/docs/validation.html
+https://mongoosejs.com/docs/populate.html
+
+##### Repository
+
+https://github.com/Automattic/mongoose
+
+### Background
+
+- MongoDB driver for Node.js is quite low level with basic features.
+- Mongoose is a JS library that wraps the MongoDB driver and provides additional features such as Schemas and Models.
+- It mimics the actions we place on our models and mirrors them in the database.
+- Similar abstractions and functionality as ActiveRecord from Rails.
+
+### Creating Models
+
+- Models provide schema definitions for a schema-less document database.
+- Each Model will represent a MongoDB collection.
+
+**Schema Example**
+
+```JavaScript
+const RecipeSchema = new Schema({
+  title: String,
+  created_at { type: Date, default: Date.now }
+})
+```
+
+**Compiling the Schema into a Model**
+
+```JavaScript
+const Recipe = mongoose.model('Recipe', RecipeSchema);
+module.exports = Recipe;
+```
+
