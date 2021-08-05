@@ -124,7 +124,7 @@ async function printLengths(dir) {
 
 ### Resources
 
-##### Guides
+##### Documentation
 
 https://expressjs.com
 
@@ -202,3 +202,75 @@ server.listen(port, function () {
 `npx nodemon <api>.js` - `npx` executes the node package `nodemon` which monitors if there have been any changes to the underlying files in the directory and restarts the `node` service if necessary.
 
 ### Recipes API with Express
+
+```JavaScript
+// index.js
+const express = require('express');
+const { recipes } = require('./db');
+const recipesRouter = require('./routes/recipes');
+
+const port = process.env.PORT || 1337;
+const app = express();
+
+app.use(express.json());
+app.use('/recipes', recipesRouter);
+
+
+app.listen(port, () => console.log('Recipes listening on port ' + port));
+
+// routes/recipes.js
+const express = require('express');
+const router = express.Router();
+const { recipes } = require('../db');
+
+const authorize = (req, res, next) => {
+  if (req.headers['authorization'] === 'Bearer 666') {
+    next();
+  } else {
+    res.status(401).end();
+  }
+  next();
+}
+
+router.use(authorize)
+
+router.get('/:id',
+  (req, res) => {
+    const recipe = recipes.find(r => r.id == req.params.id);
+    res.json(recipe);
+  }
+);
+
+router.put('/:id', (req, res) => {
+  const recipe = recipes.find(r => r.id == req.params.id);
+  Object.assign(recipe, req.body);
+  res.status(204).json(recipe);
+});
+
+router.get('/', (req, res) => res.json(recipes))
+
+router.post('/', (req, res) => {
+  const recipe = req.body;
+  recipe.id = recipes.length + 1;
+  recipes.push(recipe);
+  res.status(201).json(recipe);
+});
+
+module.exports = router;
+```
+
+**Notes**
+
+`npm init` - used to initialise the project.
+`npm i --save-dev nodemon` - added as a dev dependency.
+
+```
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+## MongoDB
+
