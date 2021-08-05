@@ -78,6 +78,7 @@ server.listen(port, function () {
   console.log(`Server listening on port ${port}`);
 });
 ```
+
 Run with `node ./hello-world.js`.
 
 ### Asynchrony
@@ -114,6 +115,90 @@ async function printLengths(dir) {
 ```
 
 **Notes**
+
 - Promises will be handled by the Callback Queue and Event Loop while the rest of the code executes.
 - In the above example, if `await` was not used, the following methods would be executed and errors would be thrown because `results` would be undefined while the Promise is **pending**.
 - By nesting `await` calls in `Promise.all`, each individual `readFile` method only begins when the previous is complete, allowing the `results` array to be generated in the same order as `fileList`. Only when this is all complete, will the `results` elements be printed as output.
+
+## Express
+
+### Resources
+
+##### Guides
+
+https://expressjs.com
+
+### Background
+
+#### Characteristics
+
+- "Fast, unopinionated, minimalist web framework for Node.js"
+- Used widely in production environments.
+- Simplifies many issues including - http, routing, params, modules.
+- Flexible architecture but can be supplemented with NPM packages to implement Model View Controller (MVC).
+
+### Recipes API with vanilla Node.js
+
+```JavaScript
+const http = require('http');
+const querystring = require('querystring');
+
+const { recipes } = require('./db.js');
+
+const port = process.env.PORT || 1337 ;
+
+const server = http.createServer(function (req, res) {
+  if (req.headers['content-type'] !== 'application/json') return respondUnsupportedMediaType(req, res);
+
+  const match = req.url.match(/\/recipes\/(?<id>\d+)$/);
+
+  if (match && req.method === 'GET') return respondShow(req, res, match.groups.id);
+  if (req.url.match(/\/recipes/) && req.method === 'GET') return respondIndex(req, res);
+
+  respondNotFound(req, res);
+});
+
+// /recipes
+function respondIndex(req, res) {
+  const qs = req.url.split('?').slice(1).join('');
+  let { page = 1, perpage = 10 } = querystring.parse(qs);
+
+  page = Number(page), perpage = Number(perpage);
+  const startIdx = (page - 1) * perpage, endIdx = (startIdx + perpage);
+  const pagedRecipes = recipes.slice(startIdx, endIdx);
+
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(pagedRecipes));
+}
+
+// /recipes/:id
+function respondShow(req, res, id) {
+  const recipe = recipes.find(r => r.id == id);
+  if (!recipe) return respondNotFound(req, res);
+
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(recipe));
+}
+
+function respondNotFound(req, res) {
+  res.writeHead(404, { 'Content-Type': 'text/plain' })
+  res.end('Not found')
+}
+
+function respondUnsupportedMediaType(req, res) {
+  res.writeHead(415, { 'Content-Type': 'text/plain' })
+  res.end('Not JSON')
+}
+
+server.listen(port, function () {
+  console.log(`Server listening on port ${port}`);
+});
+```
+
+**Notes**
+
+`npx nodemon <api>.js` - `npx` executes the node package `nodemon` which monitors if there have been any changes to the underlying files in the directory and restarts the `node` service if necessary.
+
+### Recipes API with Express
